@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block title %} Login {% endblock %}
+{% block content %}
+    <h1> Login </h1>
+    <p>Please Login or Create an account</p>
+    <p>If Acount Does not Exist one will be created</p>
+    <form action="/login" method="post">
+        <input name="username" type="text">
+        <input name="password" type="password">
+        <input type="submit">
+    </form>
+{% endblock %}

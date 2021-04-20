@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% block title %} Create {% endblock %}
+{% block content %}
+    <h1>Create Page</h1>
+    <p>Add cards to your collection</p>
+    <p>Load times are slow, please be patient</p>
+    <form method="post">
+        <label for="name">Card Name:</label>
+        <input name="name" id="name" type="text">
+        <input type="submit">
+    </form>
+    {% if request.method == 'POST' %}
+        <p>Click a card to add it to your collection</p>
+        <p>Multiple clicks will add multiple times</p>
+        <p></p>
+        <table>
+            {% for i in cards.cards %}
+                <tr>
+                    <td><img src="{{ i.imageUrl }}" onclick="add(this)" id="{{ i.id }}"></td>
+                </tr>
+            {% endfor %}
+        </table>
+    {% endif %}
+    <script>
+        function add(el) {
+            url = el.id;
+            url = url.replace(/\s/g, '');
+            window.location.replace('/add/' + url);
+        }
+    </script>
+{% endblock %}

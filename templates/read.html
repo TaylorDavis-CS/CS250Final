@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block title %} Read {% endblock %}
+{% block content %}
+    <h1>Hello {{ user }}</h1>
+    <a href="/update">UPDATE YOUR PASSWORD</a>
+    <p>Here are your Cards</p>
+    <table>
+        {% for card in cards %}
+            <tr>
+                <td><img src="{{ card.url }}"></td>
+                <td><a href="/delete/{{ card.id }}">REMOVE</a></td>
+            </tr>
+        {% endfor %}
+    </table>
+{% endblock %}

@@ -1,0 +1,29 @@
+body{
+    background: black;
+    color: white;
+}
+
+h1{
+    color: orange;
+}
+
+ul#nav li{
+    display: inline;
+}
+
+li{
+    color: white;
+}
+
+p{
+    color: teal;
+}
+
+table, tr, td{
+    border: groove teal 5px;
+}
+
+label{
+    color: aqua;
+}
+

@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block title %} Update {% endblock %}
+{% block content %}
+    <form action="/update" method="post">
+        <label for="oldpass">Old Password:</label>
+        <input name="oldpass" type="password">
+        <label for="newpass1">New Password:</label>
+        <input name="newpass1" type="password">
+        <label for="newpass2">Confirm new Password:</label>
+        <input name="newpass2" type="password">
+        <input type="submit">
+    </form>
+{% endblock %}
